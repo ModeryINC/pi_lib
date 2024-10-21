@@ -1,5 +1,5 @@
-from base_functions import errorMsg
-from dataInspect_functions import isPositive, isNegative, canBeFloat, canBeInt
+from .base_functions import errorMsg
+from .dataInspect_functions import isPositive, isNegative, canBeFloat, canBeInt
 
 # Funkcja pobierająca dane od użytkownika i zamieniająca typ danych na podany w funkcji
 def gatData(text = "Podaj liczbę: ", type = 'i', sgn = 0): # gatData -> get and transform data

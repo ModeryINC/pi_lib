@@ -1,4 +1,5 @@
 .vscode/
 dist/
-piLib.egg-info/
+pi_lib.egg-info/
 test.py
+pi_lib/__pycache__/

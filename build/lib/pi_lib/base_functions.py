@@ -13,7 +13,7 @@ def close():
         errorMsg
         return close
     
-def help(parameter = ""):
+def help(parameter = "all"):
     dictonary = {
         'errorMsg'      : 'errrorMsg(text) -> Wyświetla komunikat o błędzie\n1.text -> Nazwa błędu - default "BŁĘDNY TYP DANYCH"\n',
         'close'         : 'close() -> Pyta użytkownika czy chce zakończyć jeśli tak zwraca 1, a jak nie to 0\n',
