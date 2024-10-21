@@ -4,11 +4,11 @@ def errorMsg(text = "BŁĘDNY TYP DANYCH"):
 
 # Funkcja Sprawdzająca czy użytkownik chce zakończyć obliczenia
 def close():
-    a = input("Czy chcesz zakońcyć?")
+    a = input("Czy chcesz zakońcyć? ")
     if a.lower == "tak":
-        return 1
+        return True
     elif a.lower == "nie":
-        return 0
+        return False
     else:
         errorMsg
         return close
