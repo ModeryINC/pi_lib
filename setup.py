@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pi_lib',
+    name='piLib',
     version='0.1',
     packages=find_packages(),
     description="This is a library created for tasks on the 'Podstawy informatyki'.",
