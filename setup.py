@@ -7,7 +7,7 @@ setup(
     description="This is a library created for tasks on the 'Podstawy informatyki'.",
     author='Kamil Cygan',
     author_email='kacygan@student.agh.edu.pl',
-    # url='https://github.com/moderyinc/mojabiblioteka',
+    url='https://github.com/ModeryINC/pi_lib.git',
     install_requires=[
         'numpy>=2.1.2'
     ],
