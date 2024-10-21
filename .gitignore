@@ -1,3 +1,4 @@
 .vscode/
-.dist/
-.piLib.egg-info/
+dist/
+piLib.egg-info/
+test.py
