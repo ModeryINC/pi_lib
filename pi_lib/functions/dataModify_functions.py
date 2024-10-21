@@ -13,8 +13,8 @@ def gatData(text = "Podaj liczbę: ", type = "i", sgn = 0): # gatData -> get and
                 if conditionSgn:
                     return int(value) if type.lower == "i" else float(value)
                 else:
-                    errorMsg
+                    errorMsg()
             else:
-                errorMsg
+                errorMsg()
         except KeyError:
             errorMsg("BŁĘDNY PARAMETR type")

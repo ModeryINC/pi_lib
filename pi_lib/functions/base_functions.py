@@ -5,14 +5,14 @@ def errorMsg(text = "BŁĘDNY TYP DANYCH"):
 # Funkcja Sprawdzająca czy użytkownik chce zakończyć obliczenia
 def close():
     a = input("Czy chcesz zakońcyć? ")
-    if a.lower == "tak":
+    if a.lower() == "tak":
         return True
-    elif a.lower == "nie":
+    elif a.lower() == "nie":
         return False
     else:
-        errorMsg
+        errorMsg()
         return close
-    
+
 def help(parameter = "all"):
     dictonary = {
         'errorMsg'      : '\033[1merrrorMsg(text)\033[0m -> Wyświetla komunikat o błędzie\ntext -> Nazwa błędu - default "BŁĘDNY TYP DANYCH"\n',
