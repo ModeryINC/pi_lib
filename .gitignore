@@ -3,3 +3,5 @@ dist/
 pi_lib.egg-info/
 test.py
 pi_lib/__pycache__/
+pi_lib/functions/__pycache__/
+pi_lib/classes/__pycache__/

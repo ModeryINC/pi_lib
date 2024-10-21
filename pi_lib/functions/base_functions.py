@@ -18,7 +18,7 @@ def help(parameter = "all"):
         'errorMsg'      : '\033[1merrrorMsg(text)\033[0m -> Wyświetla komunikat o błędzie\ntext -> Nazwa błędu - default "BŁĘDNY TYP DANYCH"\n',
         'close'         : '\033[1mclose()\033[0m -> Pyta użytkownika czy chce zakończyć jeśli tak zwraca 1, a jak nie to 0\n',
         'gatData'       : '\033[1mgatData(text, type, sgn)\033[0m -> get and transform data -> pobiera od użytkownika dane i zmienia je na podany typ\ntext -> tekst wyświetlany użytkownikowi - default "Podaj liczbę: "\ntype -> typ na jaki ma być zamienione dane od użytkownika - default "i" - możliwe "i" int, "f" float\n',
-        'classFigures'  : '\033[1mKlasy które pobierają odpowiednie dane do wyliczenia:\033[0m\n1.calcSurfaceArea - wyliczanie pola powierzchni całkowitej\n2.calcVolume - wyliczania objętości\n3.calcMass - wyliczania masy\n4.calcAll - wszystkie powyższe i zwraca je jako słownik\n'
+        'classFigures'  : '\033[1mKlasy które pobierają odpowiednie dane do wyliczenia:\033[0m\n1.calcSurfaceArea - wyliczanie pola powierzchni całkowitej\n2.calcVolume - wyliczania objętości\n3.calcMass - wyliczania masy\n4.calcAll - wszystkie powyższe i zwraca je jako słownik\n\n\033[1mDostępne Klasy:\033[0m\n1.Sphere -> radius, density\n2.Tetrahedron -> edge, density\n3.Pyramid -> edgeA, EdgeB, height, density\n4.Cylinder -> radius, height\n5.Cone -> radius, height, density\n6.Ellipsoid -> firstRadius, secondRadius, density'
         }
     if parameter in dictonary:
         print(dictonary[parameter])
