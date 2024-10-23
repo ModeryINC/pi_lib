@@ -11,7 +11,7 @@ def close():
         return False
     else:
         errorMsg()
-        return close
+        return close()
 
 def help(parameter = "all"):
     dictonary = {
@@ -31,3 +31,7 @@ def help(parameter = "all"):
             print(dictonary[i])
     else:
         errorMsg("BŁĘDNY PARAMETR")
+
+def loadFile(file_name):
+    with open(file_name, "r") as file:
+        return file.read()
