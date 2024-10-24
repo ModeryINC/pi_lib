@@ -11,13 +11,11 @@ def canBeFloat(value):
     try:
         float(value)
         return True
-    except ValueError:
-        return False
+    except ValueError: return False
 
 # Funkcja sprawdzająca czy dane wejściowe mogą zostać Int'em
 def canBeInt(value):
     try:
         int(value)
         return True
-    except ValueError:
-        return False
+    except ValueError: return False

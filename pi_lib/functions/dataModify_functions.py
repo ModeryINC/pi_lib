@@ -10,14 +10,10 @@ def gatData(text = "Podaj liczbę: ", type = "i", sgn = 0): # gatData -> get and
             dictonary[type]
             if dictonary[type]:
                 conditionSgn = isNegative(float(value)) if sgn < 0 else isPositive(float(value)) if sgn > 0 else True
-                if conditionSgn:
-                    return int(value) if type.lower == "i" else float(value)
-                else:
-                    errorMsg()
-            else:
-                errorMsg()
-        except KeyError:
-            errorMsg("BŁĘDNY PARAMETR type")
+                if conditionSgn: return int(value) if type.lower == "i" else float(value)
+                else: errorMsg()
+            else: errorMsg()
+        except KeyError: errorMsg("BŁĘDNY PARAMETR type")
 
 def removeWhitespaces(value):
     try:
@@ -27,5 +23,4 @@ def removeWhitespaces(value):
         value = value.replace(",", ".")
         value = value.replace("%", "")
         return value
-    except:
-        return False
+    except: return False
