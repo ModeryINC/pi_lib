@@ -18,3 +18,14 @@ def gatData(text = "Podaj liczbę: ", type = "i", sgn = 0): # gatData -> get and
                 errorMsg()
         except KeyError:
             errorMsg("BŁĘDNY PARAMETR type")
+
+def removeWhitespaces(value):
+    try:
+        value.replace(" ", "")
+        value = value.replace(" ", "")
+        value = value.replace("'", "")
+        value = value.replace(",", ".")
+        value = value.replace("%", "")
+        return value
+    except:
+        return False
