@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages # type: ignore
 
 setup(
     name='pi_lib',
@@ -9,6 +9,8 @@ setup(
     author_email='kacygan@student.agh.edu.pl',
     url='https://github.com/ModeryINC/pi_lib.git',
     install_requires=[
-        'numpy>=2.1.2'
+        'numpy>=2.1.2',
+        'scipy>=1.14.1',
+        'matplotlib>=3.9.2'
     ],
 )

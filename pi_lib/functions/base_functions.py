@@ -13,6 +13,7 @@ def close():
         errorMsg()
         return close()
 
+# Funkcja wyświetlająca opisy działania funkcji i klas
 def help(parameter = "all"):
     dictonary = {
         'errorMsg'      : '\033[1merrrorMsg(text)\033[0m -> Wyświetla komunikat o błędzie\ntext -> Nazwa błędu - default "BŁĘDNY TYP DANYCH"\n',
@@ -22,16 +23,19 @@ def help(parameter = "all"):
         'isNegative'    : '\033[1misNegative(value)\033[0m -> Sprawdza czy wartość jest mnejsza niż zero\nvalue -> wartość sprawdzana\n',
         'canBeFloat'    : '\033[1mcanBeFloat(value)\033[0m -> Sprawdza czy wartość może zostać Float\nvalue -> wartość sprawdzana\n',
         'canBeInt'      : '\033[1mcanBeFloat(value)\033[0m -> Sprawdza czy wartość może zostać Int\nvalue -> wartość sprawdzana\n',
-        'classFigures'  : '\033[1mKlasy które pobierają odpowiednie dane do wyliczenia:\033[0m\n1.calcSurfaceArea - wyliczanie pola powierzchni całkowitej\n2.calcVolume - wyliczania objętości\n3.calcMass - wyliczania masy\n4.calcAll - wszystkie powyższe i zwraca je jako słownik\n\n\033[1mDostępne Klasy:\033[0m\n1.Sphere -> radius, density\n2.Tetrahedron -> edge, density\n3.Pyramid -> edgeA, EdgeB, height, density\n4.Cylinder -> radius, height\n5.Cone -> radius, height, density\n6.Ellipsoid -> firstRadius, secondRadius, density\n'
+        'classFigures'  : '\033[1mDostępne klasy figur:\033[0m\n1.Sphere -> radius, density\n2.Tetrahedron -> edge, density\n3.Pyramid -> edgeA, EdgeB, height, density\n4.Cylinder -> radius, height\n5.Cone -> radius, height, density\n6.Ellipsoid -> firstRadius, secondRadius, density\n\n\033[1mMetody klas figur które wyliczają:\033[0m\n1.calcSurfaceArea - wyliczanie pola powierzchni całkowitej\n2.calcVolume - wyliczania objętości\n3.calcMass - wyliczania masy\n4.calcAll - wszystkie powyższe i zwraca je jako słownik\n',
+        'PlotClass'     : '\033[1mPlotClass()\033[0m -> Clasa do tworzenia Wykresów\n\n\033[1mMetody:\033[0m\n...\n'
         }
-    if parameter in dictonary:
-        print(dictonary[parameter])
+    if parameter in dictonary: print(dictonary[parameter])
     elif parameter == "all":
+        for i in dictonary: print(dictonary[i])
+    elif parameter == "classes":
         for i in dictonary:
-            print(dictonary[i])
-    else:
-        errorMsg("BŁĘDNY PARAMETR")
+            if i.startswith("class") or i.isupper(): print(dictonary[i])
+    elif parameter == "functions":
+        for i in dictonary:
+            if i.islower() and not i.startswith("class"): print(dictonary[i])
+    else: errorMsg("BŁĘDNY PARAMETR")
 
-def loadFile(file_name):
-    with open(file_name, "r") as file:
-        return file.read()
+def loadFile(file_name): 
+    with open(file_name, "r") as file: return file.read()
