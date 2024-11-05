@@ -8,7 +8,7 @@ def gatData(text = "Podaj liczbę: ", type = "i", sgn = 0): # gatData -> get and
         dictonary = {"i": canBeInt(value), "f" : canBeFloat(value)}
         try:
             dictonary[type]
-            if dictonary[type]: 
+            if dictonary[type]:
                 if not isNegative(float(value)) if sgn < 0 else isPositive(float(value)) if sgn > 0 else True:
                     return int(value) if type.lower == "i" else float(value)
                 else:errorMsg()
