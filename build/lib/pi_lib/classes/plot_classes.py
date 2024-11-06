@@ -38,9 +38,7 @@ class PlotClass():
     # Metody generujące
     def sin(self):      self.data.append(self.amplitude * np.sin(2 * np.pi * self.frequency * np.linspace(0, self.time, self.time * self.rate)))
     def sgnSin(self):   self.data.append(self.amplitude * np.sign(np.sin(2 * np.pi * self.frequency * np.linspace(0, self.time, self.time * self.rate))))
-    def whiteNoise(self):
+    def random(self):
         linespace = np.linspace(0, self.time, self.time * self.rate)
         randomValuesLinespace = linespace + np.random.uniform(-1, 1, size=linespace.size)
         self.data.append(self.amplitude * 2 * self.frequency * randomValuesLinespace)
-    def sawtooth(): pass
-    def triangle(): pass

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages # type: ignore
 
 setup(
     name='pi_lib',
-    version='0.1',
+    version='1.1',
     packages=find_packages(),
     description="This is a library created for tasks on the 'Podstawy informatyki'.",
     author='Kamil Cygan',
