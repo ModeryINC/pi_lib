@@ -35,6 +35,9 @@ class PlotClass():
     
     def drawPlot(self, viewStart = 0, viewEnd = .01, index = -1): createPlot(y=self.data[index], viewStart=viewStart, viewEnd=viewEnd, lenght=self.time, rate=self.rate)
     
+    # Metody usuwające
+    def dropData(self, id = -1): self.data.pop(id)
+    
     # Metody generujące
     def sin(self):      self.data.append(self.amplitude * np.sin(2 * np.pi * self.frequency * np.linspace(0, self.time, self.time * self.rate)))
     def sgnSin(self):   self.data.append(self.amplitude * np.sign(np.sin(2 * np.pi * self.frequency * np.linspace(0, self.time, self.time * self.rate))))
@@ -42,5 +45,17 @@ class PlotClass():
         linespace = np.linspace(0, self.time, self.time * self.rate)
         randomValuesLinespace = linespace + np.random.uniform(-1, 1, size=linespace.size)
         self.data.append(self.amplitude * 2 * self.frequency * randomValuesLinespace)
-    def sawtooth(): pass
-    def triangle(): pass
+    def sawtooth(self): pass
+    def triangle(self): pass
+    
+    def fourierTransform(self, id = -1):
+        length = len(self.data[id])
+        deltaTime = self.data[id][1] - self.data[id][0]
+        list = []
+        for i in range(length):
+            sum = 0
+            for j in range(length): sum += self.data[id][j] * np.exp(-2 * j * np.pi * i * (j / length))
+            list.append(sum)
+        x = np.array([i * (self.frequency / length) for i in range(length)])
+        y = np.abs(np.array(list))
+        createPlot( x = x[:length // 2],y = y[: length // 2], viewEnd = max(self.data[id]))
