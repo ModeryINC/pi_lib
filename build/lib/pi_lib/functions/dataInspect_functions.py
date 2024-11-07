@@ -19,3 +19,9 @@ def canBeInt(value):
         int(value)
         return True
     except ValueError: return False
+
+def canBeBool(value):
+    try:
+        bool(value)
+        return True
+    except ValueError: return False

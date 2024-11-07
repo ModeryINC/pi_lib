@@ -9,13 +9,12 @@ def getWavLength(rate, data): return len(data) / rate
 def readWav(path): return read(path)
 
 # Funkcja rysująca wykres
-def createPlot(x = 1, y = 1, viewStart = 0, viewEnd = .01, lenght = 5, rate = 1, start = 0):
-    if not (isinstance(y,'np.ndarray') or isinstance(y, list)):
-        y = []
-        for i in range[0, lenght * rate]:
-            y.append(np.random.uniform(-1, 1))
-    if not (isinstance(x,'np.ndarray') or isinstance(x, list)):
-        x = np.linspace(start, lenght, lenght * rate)
+def createPlot(x = [], y = [], viewStart = 0, viewEnd = .01, lenght = 5, rate = 1, start = 0):
+    # if np.array_equal(y, []): y = np.sin(2 * np.pi * 0.8 * np.linspace(start, lenght, lenght * rate))
+    if np.array_equal(x, []): x = np.linspace(start, int(len(y) / rate), int(len(y)))
+    y[0] = start
+    print(x)
+    print(y)
     plot(x, y)
     xlim(viewStart, viewEnd)
     show()

@@ -11,6 +11,7 @@ setup(
     install_requires=[
         'numpy>=2.1.2',
         'scipy>=1.14.1',
-        'matplotlib>=3.9.2'
+        'matplotlib>=3.9.2',
+        'pandas>=2.2.3'
     ],
 )
