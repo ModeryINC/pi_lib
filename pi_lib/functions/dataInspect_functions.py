@@ -20,6 +20,7 @@ def canBeInt(value):
         return True
     except ValueError: return False
 
+# Funkcja sprawdzająca czy dane wejściowe mogą zostać Bool'em
 def canBeBool(value):
     try:
         bool(value)

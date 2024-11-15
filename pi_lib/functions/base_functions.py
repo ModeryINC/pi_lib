@@ -3,12 +3,11 @@ def errorMsg(text = "BŁĘDNY TYP DANYCH"): print("\n\033[1mBłąd: "+ text +"!\
 
 # Funkcja Sprawdzająca czy użytkownik chce zakończyć obliczenia
 def close():
-    a = input("Czy chcesz zakońcyć? ")
-    if a.lower() == "tak": return True
-    elif a.lower() == "nie": return False
-    else:
-        errorMsg()
-        return close()
+    data = input("Czy chcesz zakońcyć? ")
+    data = True if data in ["tak", "t", "yes", "y", "1", "true"] else False if data in ["nie", "n", "no", "0", "false", "f"] else '_'
+    if type(data) == bool: return data
+    errorMsg()
+    return close()
 
 # Funkcja wyświetlająca opisy działania funkcji i klas
 def help(parameter = "all"):

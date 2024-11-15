@@ -35,7 +35,7 @@ class PlotClass():
         self.rate = value
     
     # Metody tworzące
-    def createWav(self, fileName = 'wavFile', id = -1):
+    def saveToWav(self, fileName = 'wavFile', id = -1):
         audioData = np.int16(self.data[-1][0] * (2 ** 15))
         write(f'./PI_Cwiczenia31_10_24/{fileName}.wav', self.data[id][3], audioData)
     
