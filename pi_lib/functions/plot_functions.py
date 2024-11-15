@@ -1,6 +1,7 @@
 from scipy.io.wavfile import read # type: ignore
 import numpy as np # type: ignore
 from matplotlib.pyplot import plot, show, xlim # type: ignore
+import pyqtgraph as pg
 
 # Funkcja zwracająca długość pliku .wav w sekundach
 def getWavLength(rate, data): return len(data) / rate
@@ -9,7 +10,7 @@ def getWavLength(rate, data): return len(data) / rate
 def readWav(path): return read(path)
 
 # Funkcja rysująca wykres
-def createPlot(x = [], y = [], viewStart = 0, viewEnd = .01, lenght = 5, rate = 1, start = 0):
+def createPlot(x = [], y = [], viewStart = 0, viewEnd = .01, rate = 1, start = 0):
     # if np.array_equal(y, []): y = np.sin(2 * np.pi * 0.8 * np.linspace(start, lenght, lenght * rate))
     if np.array_equal(x, []): x = np.linspace(start, int(len(y) / rate), int(len(y)))
     y[0] = start
@@ -18,6 +19,11 @@ def createPlot(x = [], y = [], viewStart = 0, viewEnd = .01, lenght = 5, rate = 
     plot(x, y)
     xlim(viewStart, viewEnd)
     show()
+
+def createPlotPyqt(x = [], y = [], graph = None, rate = 1, start = 0):
+    if np.array_equal(x, []): x = np.linspace(start, int(len(y) / rate), int(len(y)))
+    graph.clear()
+    graph.plot(x, y)
 
 # Funkcja rysująca wykres z pliu .wav
 def createPlotFromWav(wavFile, viewStart = 0, viewEnd = .01):
