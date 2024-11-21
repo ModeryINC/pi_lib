@@ -1,3 +1,4 @@
+from .dataInspect_functions import canBeInt, canBeFloat, canBeBool
 # Funkcja odpowiadająca za wyświetlanie error'ów
 def errorMsg(text = "BŁĘDNY TYP DANYCH"): print("\n\033[1mBłąd: "+ text +"!\033[0m\n")
 
@@ -35,3 +36,16 @@ def help(parameter = "all"):
 
 def loadFile(file_name): 
     with open(file_name, "r") as file: return file.read()
+
+def inputData(text, outputType = "int"):
+    if outputType not in [int, float, bool, string]:
+        errorMsg("BŁĘDNY TYP!")
+        return
+    while True:
+        value = input(text)
+        if value == "-": break
+        if outputType == "float" and canBeFloat(value): return float(value)
+        if outputType == "int" and canBeInt(value): return int(value)
+        if outputType == "bool" and canBeBool(value): return bool(value)
+        if outputType == "string": return value
+        errorMsg("BŁĘDNE DANE!")
