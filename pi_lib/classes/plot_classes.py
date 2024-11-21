@@ -20,7 +20,7 @@ class PlotClass():
         self.amplitude = value
     
     def setFrequency(self, value):
-        if not canBeInt(value): return
+        if not canBeFloat(value): return
         if int(value) == 0: return
         self.frequency = value
     
