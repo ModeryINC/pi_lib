@@ -38,7 +38,7 @@ def loadFile(file_name):
     with open(file_name, "r") as file: return file.read()
 
 def inputData(text, outputType = "int"):
-    if outputType not in [int, float, bool, string]:
+    if outputType not in ["int", "float", "bool", "string"]:
         errorMsg("BŁĘDNY TYP!")
         return
     while True:
